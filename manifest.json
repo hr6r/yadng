@@ -1,0 +1,20 @@
+{
+	"name" : "Yet Another Drag and Go",
+	"version" : "0.2",
+	"manifest_version" : 2,
+	"description" : "__MSG_desc__",
+	"icons" : {
+		"128" : "32.png"
+	},
+	"default_locale" : "en",
+	"background" : {
+		"scripts" : ["common.js", "yadng.js"]
+	},
+	"content_scripts" : [{
+				"matches" : ["http://*/*", "https://*/*", "ftp://*/*"],
+				"js" : ["yadng.js", "options.js", "common.js"],
+				"run_at" : "document_start"
+			}],
+	"permissions" : ["tabs"],
+	"options_page" : "options.html"
+}

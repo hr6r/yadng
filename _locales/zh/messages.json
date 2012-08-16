@@ -1,0 +1,95 @@
+{
+	"desc" : {
+		"message" : "超级拖拽.向四个方向拖拽文字即可进行相应的搜索.拖拽链接可在前台/后台,左侧/右侧打开."
+	},
+	"se_empty_alert" : {
+		"message" : "搜索字符串不能为空"
+	},
+	"se_no_s_alert" : {
+		"message" : "搜索字符串中没有'%s'搜索符?"
+	},
+	"se_not_url_alert" : {
+		"message" : "搜索字符串不是合法的URL?"
+	},
+	"se_save_alert" : {
+		"message" : "保持成功!"
+	},
+	"se_option_yours" : {
+		"message" : "自定义..."
+	},
+	"reset_alert" : {
+		"message" : "确定要重设所有设置吗?"
+	},
+	"reset_btn" : {
+		"message" : "重设"
+	},
+	"vote_legend" : {
+		"message" : "您需要更多的(比方说9个)拖拽搜索区域吗?"
+	},
+	"feedback_a" : {
+		"message" : "投票告诉我"
+	},
+	"url_legend" : {
+		"message" : "拖拽URL链接或者文字链接在新分页打开"
+	},
+	"fb_legend" : {
+		"message" : "前台或后台打开"
+	},
+	"ab_legend" : {
+		"message" : "左侧或右侧打开"
+	},
+	"search_legend" : {
+		"message" : "拖拽文字进行搜索"
+	},
+	"se_legend" : {
+		"message" : "搜索引擎设定"
+	},
+	"url_helper_p" : {
+		"message" : "拖拽文字链接时, 您只需大概的选取这段文字进行拖拽, 只要保证链接文字在其中即可.<br />比如, 选取并拖拽这段文字 : <mark> ...The domain google.com was registered ... </mark> 就可以打开 <a href=\"http://google.com\">google.com</a>."
+	},
+	"search_helper_p" : {
+		"message" : "您可以直接从Chrome的搜索引擎设置中拷贝相应的搜索字符串来进行使用.<br />要定制您自己的搜索字符串, 请用'%'替代相应的搜索文本.<br />按 <strong>ESC</strong> 即可取消拖拽."
+	},
+	"selected_mode_0_label" : {
+		"message" : "<strong>前台</strong>打开"
+	},
+	"selected_mode_1_label" : {
+		"message" : "<strong>后台</strong>打开"
+	},
+	"selected_mode_2_label" : {
+		"message" : "向上拖拽在<strong>前台</strong>, 向下在<strong>后台</strong> <span class=\"warn\">(搜索模式下不可用)</span>"
+	},
+	"index_mode_0_label" : {
+		"message" : "<strong>左侧</strong>打开"
+	},
+	"index_mode_1_label" : {
+		"message" : "<strong>右侧</strong>打开"
+	},
+	"index_mode_2_label" : {
+		"message" : "向右拖拽在<strong>右侧</strong>, 向左在<strong>左侧</strong> <span class=\"warn\">(搜索模式下不可用)</span>"
+	},
+	"lu_strong" : {
+		"message" : "左上:"
+	},
+	"ru_strong" : {
+		"message" : "右上:"
+	},
+	"ld_strong" : {
+		"message" : "左下:"
+	},
+	"rd_strong" : {
+		"message" : "右下:"
+	},
+	"search_engine_a_0" : {
+		"message" : "保存"
+	},
+	"search_engine_a_1" : {
+		"message" : "保存"
+	},
+	"search_engine_a_2" : {
+		"message" : "保存"
+	},
+	"search_engine_a_3" : {
+		"message" : "保存"
+	}
+}

@@ -1,0 +1,95 @@
+{
+	"desc" : {
+		"message" : "Drag URL to open at Back/Front, Before/After; Drag text to 4 directions to search by using different search-engines."
+	},
+	"se_empty_alert" : {
+		"message" : "Search query could NOT be empty"
+	},
+	"se_no_s_alert" : {
+		"message" : "There is NO '%s' in the search query ?"
+	},
+	"se_not_url_alert" : {
+		"message" : "Search query is NOT a valid URL ?"
+	},
+	"se_save_alert" : {
+		"message" : "Search query saved !"
+	},
+	"se_option_yours" : {
+		"message" : "Yours..."
+	},
+	"reset_alert" : {
+		"message" : "Reset all settings ?"
+	},
+	"reset_btn" : {
+		"message" : "Reset"
+	},
+	"vote_legend" : {
+		"message" : "Do you need more(9) Drag-Zones ?"
+	},
+	"feedback_a" : {
+		"message" : "Feedback via Google Doc"
+	},
+	"url_legend" : {
+		"message" : "Drag URL/Text-Link to Open The New Tab"
+	},
+	"fb_legend" : {
+		"message" : "Front-End or Back-End"
+	},
+	"ab_legend" : {
+		"message" : "After or Before"
+	},
+	"search_legend" : {
+		"message" : "Drag Text to Search"
+	},
+	"se_legend" : {
+		"message" : "Search Engines"
+	},
+	"url_helper_p" : {
+		"message" : "To open a Text-based-Link, just roughly select the text as long as the URL included.<br />Select and drag text : <mark> ...The domain google.com was registered ... </mark> will open <a href=\"http://google.com\">google.com</a> as well."
+	},
+	"search_helper_p" : {
+		"message" : "You could copy the search URL from Chrome's search engines here as well.<br />To add a new search engine, insert '%s' in the URL where the search terms should appear.<br />Press <strong>ESC</strong> to cancel your drag."
+	},
+	"selected_mode_0_label" : {
+		"message" : "Always <strong>Front-End</strong>"
+	},
+	"selected_mode_1_label" : {
+		"message" : "Always <strong>Back-End</strong>"
+	},
+	"selected_mode_2_label" : {
+		"message" : "Drag Up to <strong>FE</strong>, Down to <strong>BE</strong> <span class=\"warn\">(NOT in Search Mode)</span>"
+	},
+	"index_mode_0_label" : {
+		"message" : "Always <strong>After</strong>"
+	},
+	"index_mode_1_label" : {
+		"message" : "Always <strong>Before</strong>"
+	},
+	"index_mode_2_label" : {
+		"message" : "Drag Right to <strong>After</strong>, Left to <strong>Before</strong><span class=\"warn\">(NOT in search mode)</span>"
+	},
+	"lu_strong" : {
+		"message" : "LU:"
+	},
+	"ru_strong" : {
+		"message" : "RU:"
+	},
+	"ld_strong" : {
+		"message" : "LD:"
+	},
+	"rd_strong" : {
+		"message" : "RD:"
+	},
+	"search_engine_a_0" : {
+		"message" : "Save"
+	},
+	"search_engine_a_1" : {
+		"message" : "Save"
+	},
+	"search_engine_a_2" : {
+		"message" : "Save"
+	},
+	"search_engine_a_3" : {
+		"message" : "Save"
+	}
+}

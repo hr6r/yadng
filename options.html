@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Yet Another Drag and Go Extension Options</title>
+<link href="yadng.css" rel="stylesheet" />
+<script src="common.js"></script>
+<script src="options.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<h1>
+			<span>Yet Another Drag and Go</span>
+		</h1>
+	</header>
+
+	<div class="main">
+
+		<fieldset class="wrap" style="padding-top: 10px;">
+			<legend id="url_legend"></legend>
+			<fieldset class="option">
+				<legend id="fb_legend"></legend>
+				<ul>
+					<li><input id="selected_mode_0" name="selected_mode"
+						type="radio" value="0" /><label for="selected_mode_0"
+						id="selected_mode_0_label"></label></li>
+					<li><input id="selected_mode_1" name="selected_mode"
+						type="radio" value="1" /><label for="selected_mode_1"
+						id="selected_mode_1_label"></label></li>
+					<li><input id="selected_mode_2" name="selected_mode"
+						type="radio" value="2" /><label for="selected_mode_2"
+						id="selected_mode_2_label"></label></li>
+				</ul>
+			</fieldset>
+
+			<fieldset class="option">
+				<legend id="ab_legend"></legend>
+				<ul>
+					<li><input id="index_mode_0" name="index_mode" type="radio"
+						value="0" /><label for="index_mode_0" id="index_mode_0_label">
+					</label></li>
+					<li><input id="index_mode_1" name="index_mode" type="radio"
+						value="1" /><label for="index_mode_1" id="index_mode_1_label">
+					</label></li>
+					<li><input id="index_mode_2" name="index_mode" type="radio"
+						value="2" /><label for="index_mode_2" id="index_mode_2_label"></label></li>
+				</ul>
+			</fieldset>
+			<p class="clear" id="url_helper_p"></p>
+		</fieldset>
+
+		<fieldset class="wrap">
+			<legend id="search_legend"></legend>
+			<div class="yadng_zone">
+				<div id="search_engine_zone_0" class="yadng_zone_icon"></div>
+				<div id="search_engine_zone_1" class="yadng_zone_icon"></div>
+				<div id="search_engine_zone_2" class="yadng_zone_icon"></div>
+				<div id="search_engine_zone_3" class="yadng_zone_icon"></div>
+				<div class="clear"></div>
+			</div>
+			<fieldset class="option">
+				<legend id="se_legend"></legend>
+				<ul id="se_ul">
+					<li><strong id="lu_strong"></strong> <select
+						id="search_engine_select_0" title="0">
+					</select> <input type="text" id="search_engine_url_0" class="se_input_url" />
+						<button id="search_engine_a_0" title="0" style="display: none;"></button></li>
+					<li><strong id="ru_strong"></strong> <select
+						id="search_engine_select_1" title="1">
+					</select> <input type="text" id="search_engine_url_1" class="se_input_url" />
+						<button id="search_engine_a_1" title="1" style="display: none;"></button></li>
+					<li><strong id="ld_strong"></strong> <select
+						id="search_engine_select_2" title="2">
+					</select> <input type="text" id="search_engine_url_2" class="se_input_url" />
+						<button id="search_engine_a_2" title="2" style="display: none;"></button></li>
+					<li><strong id="rd_strong"></strong> <select
+						id="search_engine_select_3" title="3">
+					</select> <input type="text" id="search_engine_url_3" class="se_input_url" />
+						<button id="search_engine_a_3" title="3" style="display: none;"></button></li>
+				</ul>
+			</fieldset>
+			<p class="clear" id="search_helper_p"></p>
+		</fieldset>
+
+		<fieldset class="wrap">
+			<legend id="vote_legend"></legend>
+			<div class="yadng_zone_9">
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/google.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/bing.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/imdb.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/yahoo.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/ebay.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/twitter.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/youtube.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/wikipedia.ico') no-repeat;"></div>
+				<div class="yadng_zone_icon"
+					style="background: url('../favicon/facebook.ico') no-repeat;"></div>
+				<div class="clear"></div>
+			</div>
+			<div id="feedback">
+				<a id="feedback_a" href="http://goo.gl/OxQR"></a>
+			</div>
+		</fieldset>
+
+	</div>
+
+	<footer>
+		<button id="reset_btn" onclick="javascript: reset();"></button>
+	</footer>
+
+</body>
+</html>
