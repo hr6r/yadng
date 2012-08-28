@@ -16,7 +16,7 @@ function _getDefault() {
 var _build_in_seach_engines = [{
 			"name" : "wikipedia",
 			"favicon" : "./favicon/wikipedia.ico",
-			"url" : "http://en.wikipedia.org/w/index.php?search=%s"
+			"url" : "http://en.wikipedia.org/wiki/How%s"
 		}, {
 			"name" : "google",
 			"favicon" : "./favicon/google.ico",
@@ -36,7 +36,7 @@ var _build_in_seach_engines = [{
 		}, {
 			"name" : "taobao",
 			"favicon" : "./favicon/taobao.ico",
-			"url" : "http://search1.taobao.com/browse/search_auction.htm?q=%s"
+			"url" : "http://s.taobao.com/search?q=%s"
 		}, {
 			"name" : "shooter",
 			"favicon" : "./favicon/shooter.ico",
@@ -81,6 +81,10 @@ var _build_in_seach_engines = [{
 			"name" : "yahoo",
 			"favicon" : "./favicon/yahoo.ico",
 			"url" : "http://search.yahoo.com/search?fr=crmas&p=%s"
+		}, {
+			"name" : "pinterest",
+			"favicon" : "./favicon/pinterest.ico",
+			"url" : "http://pinterest.com/search/?q=%s"
 		}];
 
 function _check_radio(_id) {
