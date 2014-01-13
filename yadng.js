@@ -27,7 +27,7 @@ function doDrag(e) {
 }
 
 function doDrop(e) {
-	if (e.dataTransfer.dropEffect == "copy") {
+	if (e.dataTransfer.dropEffect == "move") {
 		if (e.preventDefault) {
 			e.preventDefault();
 		}
