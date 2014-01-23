@@ -1,6 +1,6 @@
 {
 	"name" : "Yet Another Drag and Go",
-	"version" : "0.2",
+	"version" : "0.2.1",
 	"manifest_version" : 2,
 	"description" : "__MSG_desc__",
 	"icons" : {

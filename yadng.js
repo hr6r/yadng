@@ -21,13 +21,13 @@ function dragOver(e) {
 
 function doDrag(e) {
 	var _new_seId = _getSeId();
-	if (_seId != _new_seId) {
+	if (_seId != _new_seId && (window.event.x != 0 && window.event.y != 0)) {
 		_seId = _new_seId;
 	}
 }
 
 function doDrop(e) {
-	if (e.dataTransfer.dropEffect == "copy") {
+	if (e.dataTransfer.dropEffect === "copy") {
 		if (e.preventDefault) {
 			e.preventDefault();
 		}
@@ -53,7 +53,7 @@ function getDragSelection(e) {
 			data_type = "link";
 			data = parent_node.href;
 		}
-	} else if (e.srcElement.nodeName == "IMG") {
+	} else if (e.srcElement.nodeName === "IMG") {
 		data_type = "img";
 		data = e.srcElement.src;
 	} else {
@@ -69,12 +69,13 @@ function getDragSelection(e) {
 }
 
 function doYadng(_tab) {
-	if (_tab.message == 'tab') {
+	if (_tab.message === 'tab') {
 		chrome.tabs.getSelected(null, function(tab) {
 					_set_index(_tab, tab.index);
 					_set_selected(_tab);
-					if (!_tab.isUrl)
+					if (!_tab.isUrl) {
 						_set_search_url(_tab);
+					}
 					chrome.tabs.create({
 								"url" : _tab.url,
 								"selected" : _tab.selected,
@@ -86,12 +87,13 @@ function doYadng(_tab) {
 
 function _set_index(_tab, _i) {
 	var _im = _getLocal().indexMode;
-	if (_im == 2) {
-		_tab.index = (_tab.seId == 0 || _tab.seId == 2) ? _i : _i + 1;
-		if (!_tab.isUrl)
+	if (_im === 2) {
+		_tab.index = (_tab.seId === 0 || _tab.seId === 2) ? _i : _i + 1;
+		if (!_tab.isUrl) {
 			_tab.index = _i + 1;
+		}
 	} else {
-		_tab.index = _im == 0 ? _i + 1 : _i;
+		_tab.index = _im === 0 ? _i + 1 : _i;
 	}
 }
 
@@ -125,22 +127,23 @@ function _set_url(_tab, _dnd_data) {
 
 function _set_search_url(_tab) {
 	var engines = _getLocal().searchEngines;
-	if (isNaN(engines[_tab.seId]))// user search engines
+	if (isNaN(engines[_tab.seId])) {// user search engines
 		_tab.url = engines[_tab.seId].url.replace("%s", _tab.url);
-	else
-		// build-in
+	} else { // build-in
 		_tab.url = _build_in_seach_engines[engines[_tab.seId]].url.replace(
 				"%s", _tab.url);
+	}
 }
 
 function _set_selected(_tab) {
 	var _sm = _getLocal().selectedMode;
-	if (_sm == 2) {
-		_tab.selected = (_tab.seId == 0 || _tab.seId == 1) ? true : false;
-		if (!_tab.isUrl)
+	if (_sm === 2) {
+		_tab.selected = (_tab.seId === 0 || _tab.seId === 1) ? true : false;
+		if (!_tab.isUrl) {
 			_tab.selected = false;
+		}
 	} else {
-		_tab.selected = _sm == 0 ? true : false;
+		_tab.selected = _sm === 0 ? true : false;
 	}
 }
 
@@ -148,12 +151,14 @@ function _getSeId() {
 	var now_x = window.event.x;
 	var now_y = window.event.y;
 	if (now_x < _start_x) {
-		if (now_y > _start_y)
+		if (now_y > _start_y) {
 			return 2;
+		}
 		return 0;
 	} else {
-		if (now_y < _start_y)
+		if (now_y < _start_y) {
 			return 1;
+		}
 		return 3;
 	}
 }
