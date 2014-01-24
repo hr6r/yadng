@@ -27,7 +27,9 @@ function doDrag(e) {
 }
 
 function doDrop(e) {
-	if (e.dataTransfer.dropEffect === "copy") {
+	if (e.dataTransfer.dropEffect === "none") {
+		// temp set to 'none' for win bug
+		// win set the 'copy'(@line 18) to 'move'
 		if (e.preventDefault) {
 			e.preventDefault();
 		}
