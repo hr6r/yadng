@@ -1,23 +1,23 @@
 @CHARSET 'UTF-8';
 
 #logo {
-	background: 0 center url('32.png') no-repeat;
+	background: 0 center url('img/yadng_32.png') no-repeat;
 	padding-left: 48px;
 }
 
 #url_legend {
 	background: 0 center url('img/world_link.png') no-repeat;
-	padding-left: 20px;
+	padding-left: 40px;
 }
 
 #search_legend {
-	background: 0 center url('img/zoom.png') no-repeat;
-	padding-left: 20px;
+	background: 0 center url('img/arrow_out.png') no-repeat;
+	padding-left: 40px;
 }
 
 #vote_legend {
-	background: 0 center url('img/yadng_16.png') no-repeat;
-	padding-left: 20px;
+	background: 0 center url('img/zone.png') no-repeat;
+	padding-left: 40px;
 }
 
 #selected_mode_0_label {
