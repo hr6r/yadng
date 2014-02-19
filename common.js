@@ -28,94 +28,124 @@ var _show_search_yadng_zone = function(_i, _img) {
 
 var _build_in_seach_engines = [{
 			'id' : 0,
-			'name' : 'wikipedia',
+			'name' : 'Wikipedia',
 			'favicon' : './favicon/wikipedia.ico',
 			'url' : 'http://en.wikipedia.org/wiki/How%s'
 		}, {
 			'id' : 1,
-			'name' : 'google',
+			'name' : 'Google',
 			'favicon' : './favicon/google.ico',
 			'url' : 'http://www.google.com/search?hl=en&q=%s'
 		}, {
 			'id' : 2,
-			'name' : 'douban',
+			'name' : 'Douban',
 			'favicon' : './favicon/douban.ico',
-			'url' : 'http://www.douban.com/search?search_text=%s'
+			'url' : 'http://www.douban.com/search?q=%s'
 		}, {
 			'id' : 3,
-			'name' : 'twitter',
+			'name' : 'Twitter',
 			'favicon' : './favicon/twitter.ico',
 			'url' : 'http://twitter.com/search?q=%s'
 		}, {
 			'id' : 4,
-			'name' : 'bing',
+			'name' : 'Bing',
 			'favicon' : './favicon/bing.ico',
 			'url' : 'http://www.bing.com/search?setmkt=en-US&q=%s'
 		}, {
 			'id' : 5,
-			'name' : 'taobao',
+			'name' : 'Taobao',
 			'favicon' : './favicon/taobao.ico',
 			'url' : 'http://s.taobao.com/search?q=%s'
 		}, {
 			'id' : 6,
-			'name' : 'shooter',
+			'name' : 'Shooter',
 			'favicon' : './favicon/shooter.ico',
 			'url' : 'http://shooter.cn/search/%s'
 		}, {
 			'id' : 7,
-			'name' : 'amazon',
+			'name' : 'Amazon',
 			'favicon' : './favicon/amazon.ico',
 			'url' : 'http://www.amazon.com/s/field-keywords=%s'
 		}, {
 			'id' : 8,
-			'name' : 'delicious',
+			'name' : 'Delicious',
 			'favicon' : './favicon/delicious.ico',
 			'url' : 'http://delicious.com/search?p=%s'
 		}, {
 			'id' : 9,
-			'name' : 'flickr',
+			'name' : 'Flickr',
 			'favicon' : './favicon/flickr.ico',
 			'url' : 'http://www.flickr.com/search/?q=%s'
 		}, {
 			'id' : 10,
-			'name' : 'technorati',
+			'name' : 'Technorati',
 			'favicon' : './favicon/technorati.ico',
 			'url' : 'http://technorati.com/search?return=posts&authority=high&q=%s'
 		}, {
 			'id' : 11,
-			'name' : 'youtube',
+			'name' : 'Youtube',
 			'favicon' : './favicon/youtube.ico',
 			'url' : 'http://www.youtube.com/results?search_query=%s'
 		}, {
 			'id' : 12,
-			'name' : 'ebay',
+			'name' : 'Ebay',
 			'favicon' : './favicon/ebay.ico',
 			'url' : 'http://shop.ebay.com/?_nkw=%s&_sacat=See-All-Categories'
 		}, {
 			'id' : 13,
-			'name' : 'imdb',
+			'name' : 'IMDB',
 			'favicon' : './favicon/imdb.ico',
 			'url' : 'http://www.imdb.com/find?s=all&q=%s'
 		}, {
 			'id' : 14,
-			'name' : 'google encrypted',
+			'name' : 'Google Encrypted',
 			'favicon' : './favicon/google.ico',
 			'url' : 'https://encrypted.google.com/search?hl=en&q=%s'
 		}, {
 			'id' : 15,
-			'name' : 'wolfram alpha',
+			'name' : 'Wolfram Alpha',
 			'favicon' : './favicon/wolfram.ico',
 			'url' : 'http://www.wolframalpha.com/input/?i=%s'
 		}, {
 			'id' : 16,
-			'name' : 'yahoo',
+			'name' : 'Yahoo',
 			'favicon' : './favicon/yahoo.ico',
 			'url' : 'http://search.yahoo.com/search?fr=crmas&p=%s'
 		}, {
 			'id' : 17,
-			'name' : 'pinterest',
+			'name' : 'Pinterest',
 			'favicon' : './favicon/pinterest.ico',
 			'url' : 'http://pinterest.com/search/?q=%s'
+		}, {
+			'id' : 18,
+			'name' : 'Zhihu',
+			'favicon' : './favicon/zhihu.ico',
+			'url' : 'http://www.zhihu.com/search?q=%s'
+		}, {
+			'id' : 19,
+			'name' : 'Quora',
+			'favicon' : './favicon/quora.ico',
+			'url' : 'https://www.quora.com/search?q=%s'
+		}, {
+			'id' : 20,
+			'name' : 'Stack Overflow',
+			'favicon' : './favicon/stackoverflow.ico',
+			'url' : 'http://www.stackoverflow.com/search?q=%s'
+		}, {
+			'id' : 21,
+			'name' : 'Baidu',
+			'favicon' : './favicon/baidu.ico',
+			'url' : 'http://www.baidu.com/s?wd=%s'
+		}, {
+			'id' : 22,
+			'name' : 'Github',
+			'favicon' : './favicon/github.ico',
+			'url' : 'https://github.com/search?q=%s'
+		}, {
+			'id' : 23,
+			'name' : 'etao',
+			'favicon' : './favicon/etao.ico',
+			'url' : 'http://s.etao.com/search?q=%s'
 		}];
 
 var _i18n_msgs = ['reset_btn', 'vote_legend', 'feedback_a', 'url_legend',
