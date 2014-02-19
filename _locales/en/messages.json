@@ -23,7 +23,7 @@
 	"reset_btn" : {
 		"message" : "Reset"
 	},
-	"vote_legend" : {
+	"vote_header" : {
 		"message" : "More Dragging to Search Zones"
 	},
 	"feedback_h4" : {
@@ -32,19 +32,19 @@
 	"feedback_a" : {
 		"message" : "Vote via Google Doc"
 	},
-	"url_legend" : {
+	"url_header" : {
 		"message" : "Drag URL/Text-Link to Open in a New Tab"
 	},
-	"fb_legend" : {
+	"fb_header" : {
 		"message" : "Front-End or Back-End"
 	},
-	"ab_legend" : {
+	"ab_header" : {
 		"message" : "After or Before"
 	},
-	"search_legend" : {
+	"search_header" : {
 		"message" : "Drag Text to Search"
 	},
-	"se_legend" : {
+	"se_header" : {
 		"message" : "Search Engines"
 	},
 	"url_helper_p" : {
@@ -95,7 +95,7 @@
 	"search_engine_a_3" : {
 		"message" : "Save"
 	},
-	"donate_legend" : {
+	"donate_header" : {
 		"message" : "Buy me a Coffee"
 	},
 	"paypal_a" : {

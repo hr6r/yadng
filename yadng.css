@@ -5,22 +5,22 @@
 	padding-left: 48px;
 }
 
-#url_legend {
+#url_header {
 	background: 0 center url('img/world_link.png') no-repeat;
 	padding-left: 40px;
 }
 
-#search_legend {
+#search_header {
 	background: 0 center url('img/arrow_out.png') no-repeat;
 	padding-left: 40px;
 }
 
-#vote_legend {
+#vote_header {
 	background: 0 center url('img/zone.png') no-repeat;
 	padding-left: 40px;
 }
 
-#donate_legend {
+#donate_header {
 	background: 0 center url('img/moneybox.png') no-repeat;
 	padding-left: 40px;
 }

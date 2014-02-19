@@ -23,7 +23,7 @@
 	"reset_btn" : {
 		"message" : "重设"
 	},
-	"vote_legend" : {
+	"vote_header" : {
 		"message" : "更多的拖拽搜索区域"
 	},
 	"feedback_h4" : {
@@ -32,19 +32,19 @@
 	"feedback_a" : {
 		"message" : "投票告诉我"
 	},
-	"url_legend" : {
+	"url_header" : {
 		"message" : "拖拽URL链接或者文字链接在新分页打开"
 	},
-	"fb_legend" : {
+	"fb_header" : {
 		"message" : "前台或后台打开"
 	},
-	"ab_legend" : {
+	"ab_header" : {
 		"message" : "左侧或右侧打开"
 	},
-	"search_legend" : {
+	"search_header" : {
 		"message" : "拖拽文字进行搜索"
 	},
-	"se_legend" : {
+	"se_header" : {
 		"message" : "搜索引擎设定"
 	},
 	"url_helper_p" : {
@@ -95,7 +95,7 @@
 	"search_engine_a_3" : {
 		"message" : "保存"
 	},
-	"donate_legend" : {
+	"donate_header" : {
 		"message" : "请我喝一杯"
 	},
 	"paypal_a" : {

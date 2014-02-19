@@ -148,14 +148,14 @@ var _build_in_seach_engines = [{
 			'url' : 'http://s.etao.com/search?q=%s'
 		}];
 
-var _i18n_msgs = ['reset_btn', 'vote_legend', 'feedback_a', 'url_legend',
-		'fb_legend', 'ab_legend', 'search_legend', 'se_legend', 'url_helper_p',
+var _i18n_msgs = ['reset_btn', 'vote_header', 'feedback_a', 'url_header',
+		'fb_header', 'ab_header', 'search_header', 'se_header', 'url_helper_p',
 		'search_helper_p', 'selected_mode_0_label', 'selected_mode_1_label',
 		'selected_mode_2_label', 'index_mode_0_label', 'index_mode_1_label',
 		'index_mode_2_label', 'lu_strong', 'ru_strong', 'ld_strong',
 		'rd_strong', 'search_engine_a_0', 'search_engine_a_1',
 		'search_engine_a_2', 'search_engine_a_3', 'feedback_h4',
-		'donate_legend', 'paypal_a', 'alipay_a'];
+		'donate_header', 'paypal_a', 'alipay_a'];
 
 /**
  * @deprecated for old users

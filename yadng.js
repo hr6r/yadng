@@ -3,6 +3,9 @@ var _start_y = 0;
 var _seId = 0;
 var _dnd_data;
 
+var _url_regex_0 = /[a-zA-Z]+:\/\/[^\s]*/;
+var _url_regex_1 = /[^\s]*\.(com|net|org|gov|edu|biz|name|info|asia|uk|hk|cn|hk|au|ca|de|fr|jp|kr|tw|ru|us)/;
+
 var dragStart = function(e) {
 	_start_x = window.event.x;
 	_start_y = window.event.y;
@@ -14,8 +17,8 @@ var dragOver = function(e) {
 	if (e.preventDefault) {
 		e.preventDefault();
 	}
-	e.dataTransfer.effectAllowed = "copy";
-	e.dataTransfer.dropEffect = "copy";
+	e.dataTransfer.effectAllowed = 'copy';
+	e.dataTransfer.dropEffect = 'copy';
 	return false;
 };
 
@@ -27,7 +30,7 @@ var doDrag = function(e) {
 };
 
 var doDrop = function(e) {
-	if (e.dataTransfer.dropEffect == "none") {
+	if (e.dataTransfer.dropEffect == 'none') {
 		// temp set to 'none' for win bug
 		// win set the 'copy'(@line 18) to 'move'
 		if (e.preventDefault) {
@@ -44,19 +47,19 @@ var doDrop = function(e) {
 // thanks to wenzhang.zhu@http://code.google.com/u/wenzhang.zhu/
 var getDragSelection = function(e) {
 	var data;
-	var data_type = "text";
+	var data_type = 'text';
 	var selection = window.getSelection();
 	var parent_node = e.srcElement;
-	while (parent_node && parent_node.nodeName != "A") {
+	while (parent_node && parent_node.nodeName != 'A') {
 		parent_node = parent_node.parentNode;
 	}
 	if (parent_node) {
-		if (parent_node.href.substr(0, 11) != "javascript:") {
-			data_type = "link";
+		if (parent_node.href.substr(0, 11) != 'javascript:') {
+			data_type = 'link';
 			data = parent_node.href;
 		}
-	} else if (e.srcElement.nodeName == "IMG") {
-		data_type = "img";
+	} else if (e.srcElement.nodeName == 'IMG') {
+		data_type = 'img';
 		data = e.srcElement.src;
 	} else {
 		data = e.dataTransfer.getData('Text');
@@ -65,8 +68,8 @@ var getDragSelection = function(e) {
 		}
 	}
 	return {
-		"type" : data_type,
-		"data" : data
+		'type' : data_type,
+		'data' : data
 	};
 };
 
@@ -81,9 +84,9 @@ var doYadng = function(_tab) {
 									_set_search_url(_tab, r.searchEngines);
 								}
 								chrome.tabs.create({
-											"url" : _tab.url,
-											"selected" : _tab.selected,
-											"index" : _tab.index
+											'url' : _tab.url,
+											'selected' : _tab.selected,
+											'index' : _tab.index
 										});
 							});
 				});
@@ -102,25 +105,24 @@ var _set_index = function(_tab, _i, _im) {
 };
 
 var _getTab = function(_dnd_data) {
-	var _tab = new Object();
-	_tab.message = "tab";
-	_tab.seId = _seId;
+	var _tab = {
+		message : 'tab',
+		seId : _seId
+	};
 	_set_url(_tab, _dnd_data);
 	return _tab;
 };
 
 var _set_url = function(_tab, _dnd_data) {
-	var url_regex_0 = /[a-zA-Z]+:\/\/[^\s]*/;
-	var url_regex_1 = /[^\s]*\.(com|net|org|gov|edu|biz|name|info|asia|uk|hk|cn|hk|au|ca|de|fr|jp|kr|tw|ru|us)/;
 
-	var matches = _dnd_data.match(url_regex_0);
+	var matches = _dnd_data.match(_url_regex_0);
 	if (matches) {
 		_tab.url = matches[0];
 		_tab.isUrl = true;
 	} else {
-		matches = _dnd_data.match(url_regex_1);
+		matches = _dnd_data.match(_url_regex_1);
 		if (matches) {
-			_tab.url = "http://" + matches[0];
+			_tab.url = 'http://' + matches[0];
 			_tab.isUrl = true;
 		} else {
 			_tab.url = _dnd_data;
@@ -131,10 +133,10 @@ var _set_url = function(_tab, _dnd_data) {
 
 var _set_search_url = function(_tab, engines) {
 	if (-1 == engines[_tab.seId].id) { // user search engines
-		_tab.url = engines[_tab.seId].url.replace("%s", _tab.url);
+		_tab.url = engines[_tab.seId].url.replace('%s', _tab.url);
 	} else { // build-in
 		_tab.url = _build_in_seach_engines[engines[_tab.seId].id].url.replace(
-				"%s", _tab.url);
+				'%s', _tab.url);
 	}
 };
 
