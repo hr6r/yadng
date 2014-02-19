@@ -20,6 +20,11 @@
 	padding-left: 40px;
 }
 
+#donate_legend {
+	background: 0 center url('img/moneybox.png') no-repeat;
+	padding-left: 40px;
+}
+
 #selected_mode_0_label {
 	background: 0 center url('img/shape_move_front.png') no-repeat;
 	padding-left: 20px;

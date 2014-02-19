@@ -94,5 +94,14 @@
 	},
 	"search_engine_a_3" : {
 		"message" : "保存"
+	},
+	"donate_legend" : {
+		"message" : "请我喝一杯"
+	},
+	"paypal_a" : {
+		"message" : "Paypal"
+	},
+	"alipay_a" : {
+		"message" : "支付宝"
 	}
 }

@@ -94,5 +94,14 @@
 	},
 	"search_engine_a_3" : {
 		"message" : "Save"
+	},
+	"donate_legend" : {
+		"message" : "Buy me a Coffee"
+	},
+	"paypal_a" : {
+		"message" : "Paypal"
+	},
+	"alipay_a" : {
+		"message" : "Alipay"
 	}
 }
