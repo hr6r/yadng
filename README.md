@@ -6,6 +6,13 @@ Drag URL to open at Back/Front, Before/After; Drag text to 4 directions to searc
 [Install Via Google Web Store](https://chrome.google.com/webstore/detail/hnoonkgmmnklbdehoepdjcidhjbncjmi/)
 
 ## Changelog ##
+**v0.3.0**
+
+1. refactor
+2. sync configuration data with cloud
+2. new options page
+
+
 **v0.2.2**
 
 1. upgrade for Chrome v32+ (Windows)

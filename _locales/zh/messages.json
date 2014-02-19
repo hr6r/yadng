@@ -12,7 +12,7 @@
 		"message" : "搜索字符串不是合法的URL?"
 	},
 	"se_save_alert" : {
-		"message" : "保持成功!"
+		"message" : "保存成功!"
 	},
 	"se_option_yours" : {
 		"message" : "自定义..."
@@ -24,6 +24,9 @@
 		"message" : "重设"
 	},
 	"vote_legend" : {
+		"message" : "更多的拖拽搜索区域"
+	},
+	"feedback_h4" : {
 		"message" : "您需要更多的(比方说9个)拖拽搜索区域吗?"
 	},
 	"feedback_a" : {
@@ -45,10 +48,10 @@
 		"message" : "搜索引擎设定"
 	},
 	"url_helper_p" : {
-		"message" : "拖拽文字链接时, 您只需大概的选取这段文字进行拖拽, 只要保证链接文字在其中即可.<br />比如, 选取并拖拽这段文字 : <mark> ...The domain google.com was registered ... </mark> 就可以打开 <a href=\"http://google.com\">google.com</a>."
+		"message" : "<ul><li>拖拽文字链接时, 您只需大概的选取这段文字进行拖拽, 只要保证链接文字在其中即可.</li><ul><li>比如, 选取并拖拽这段文字 : <code>The domain google.com was registered</code> 就可以打开 <a href=\"http://google.com\">google.com</a>.</li></ul><li>按 <kbd>ESC</kbd> 即可取消拖拽.</li></ul>"
 	},
 	"search_helper_p" : {
-		"message" : "您可以直接从Chrome的搜索引擎设置中拷贝相应的搜索字符串来进行使用.<br />要定制您自己的搜索字符串, 请用'%'替代相应的搜索文本.<br />按 <strong>ESC</strong> 即可取消拖拽."
+		"message" : "<ul><li>您可以选择 <span class=\"label label-primary\">自定义...</span> 来使用您喜爱的其他搜索引擎.</li><ul><li>您可以直接从Chrome的搜索引擎设置中拷贝相应的搜索字符串来使用.</li><li>要定制您自己的搜索字符串, 请用 <code>%s</code> 替代相应的搜索文本.</li></ul><li>按 <kbd>ESC</kbd> 即可取消拖拽.</li></ul>"
 	},
 	"selected_mode_0_label" : {
 		"message" : "<strong>前台</strong>打开"
@@ -57,16 +60,16 @@
 		"message" : "<strong>后台</strong>打开"
 	},
 	"selected_mode_2_label" : {
-		"message" : "向上拖拽在<strong>前台</strong>, 向下在<strong>后台</strong> <span class=\"warn\">(搜索模式下不可用)</span>"
+		"message" : "向上拖拽在<strong>前台</strong>, 向下在<strong>后台</strong> <span class=\"label label-danger\">搜索模式下不可用</span>"
 	},
 	"index_mode_0_label" : {
-		"message" : "<strong>左侧</strong>打开"
-	},
-	"index_mode_1_label" : {
 		"message" : "<strong>右侧</strong>打开"
 	},
+	"index_mode_1_label" : {
+		"message" : "<strong>左侧</strong>打开"
+	},
 	"index_mode_2_label" : {
-		"message" : "向右拖拽在<strong>右侧</strong>, 向左在<strong>左侧</strong> <span class=\"warn\">(搜索模式下不可用)</span>"
+		"message" : "向右拖拽在<strong>右侧</strong>, 向左在<strong>左侧</strong> <span class=\"label label-danger\">搜索模式下不可用</span>"
 	},
 	"lu_strong" : {
 		"message" : "左上:"

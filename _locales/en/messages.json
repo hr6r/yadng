@@ -24,13 +24,16 @@
 		"message" : "Reset"
 	},
 	"vote_legend" : {
-		"message" : "Do you need more(9) Drag-Zones ?"
+		"message" : "More Dragging to Search Zones"
+	},
+	"feedback_h4" : {
+		"message" : "Do you need more dragging to search zones ?"
 	},
 	"feedback_a" : {
-		"message" : "Feedback via Google Doc"
+		"message" : "Vote via Google Doc"
 	},
 	"url_legend" : {
-		"message" : "Drag URL/Text-Link to Open The New Tab"
+		"message" : "Drag URL/Text-Link to Open in a New Tab"
 	},
 	"fb_legend" : {
 		"message" : "Front-End or Back-End"
@@ -45,10 +48,10 @@
 		"message" : "Search Engines"
 	},
 	"url_helper_p" : {
-		"message" : "To open a Text-based-Link, just roughly select the text as long as the URL included.<br />Select and drag text : <mark> ...The domain google.com was registered ... </mark> will open <a href=\"http://google.com\">google.com</a> as well."
+		"message" : "<ul><li>To open a Text-based-Link, just roughly select the text as long as the URL included.</li><ul><li>i.e. Select then drag & drop text : <code>The domain google.com was registered</code> will open <a href=\"http://google.com\">google.com</a> as well.</li></ul><li>Press <kbd>ESC</kbd> to cancel your drag.</li></ul>"
 	},
 	"search_helper_p" : {
-		"message" : "You could copy the search URL from Chrome's search engines here as well.<br />To add a new search engine, insert '%s' in the URL where the search terms should appear.<br />Press <strong>ESC</strong> to cancel your drag."
+		"message" : "<ul><li>Select <span class=\"label label-primary\">Yours...</span> to add your favorite search engine.</li><ul><li>You can copy the search URL from Chrome's search engines.</li><li>To add a new search engine, insert <code>%s</code> in the URL where the search terms should appear.</li></ul><li>Press <kbd>ESC</kbd> to cancel your drag.</li></ul>"
 	},
 	"selected_mode_0_label" : {
 		"message" : "Always <strong>Front-End</strong>"
@@ -57,7 +60,7 @@
 		"message" : "Always <strong>Back-End</strong>"
 	},
 	"selected_mode_2_label" : {
-		"message" : "Drag Up to <strong>FE</strong>, Down to <strong>BE</strong> <span class=\"warn\">(NOT in Search Mode)</span>"
+		"message" : "Drag Up to <strong>FE</strong>, Down to <strong>BE</strong> <span class=\"label label-danger\">NOT in Search Mode</span>"
 	},
 	"index_mode_0_label" : {
 		"message" : "Always <strong>After</strong>"
@@ -66,19 +69,19 @@
 		"message" : "Always <strong>Before</strong>"
 	},
 	"index_mode_2_label" : {
-		"message" : "Drag Right to <strong>After</strong>, Left to <strong>Before</strong><span class=\"warn\">(NOT in search mode)</span>"
+		"message" : "Drag Right to <strong>After</strong>, Left to <strong>Before</strong> <span class=\"label label-danger\">NOT in Search Mode</span>"
 	},
 	"lu_strong" : {
-		"message" : "LU:"
+		"message" : "Left-Up"
 	},
 	"ru_strong" : {
-		"message" : "RU:"
+		"message" : "Right-Up"
 	},
 	"ld_strong" : {
-		"message" : "LD:"
+		"message" : "Left-Down"
 	},
 	"rd_strong" : {
-		"message" : "RD:"
+		"message" : "Right-Down"
 	},
 	"search_engine_a_0" : {
 		"message" : "Save"

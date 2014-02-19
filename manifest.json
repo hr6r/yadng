@@ -1,22 +1,24 @@
 {
-	"name" : "Yet Another Drag and Go",
-	"version" : "0.2.2",
 	"manifest_version" : 2,
+	"name" : "Yet Another Drag and Go",
+	"version" : "0.3.0",
+	"default_locale" : "en",
 	"description" : "__MSG_desc__",
 	"icons" : {
 		"16" : "16.png",
 		"48" : "48.png",
 		"128" : "128.png"
 	},
-	"default_locale" : "en",
+	"author" : "hr6r",
 	"background" : {
-		"scripts" : ["common.js", "yadng.js"]
+		"scripts" : ["common.js", "yadng.js"],
+		"persistent" : false
 	},
 	"content_scripts" : [{
 				"matches" : ["http://*/*", "https://*/*", "ftp://*/*"],
 				"js" : ["common.js", "yadng.js"],
 				"run_at" : "document_start"
 			}],
-	"permissions" : ["tabs"],
+	"permissions" : ["tabs", "storage"],
 	"options_page" : "options.html"
 }
