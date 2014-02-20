@@ -29,12 +29,12 @@ var _build_in_seach_engines = [{
 			'id' : 0,
 			'name' : 'Wikipedia',
 			'favicon' : './favicon/wikipedia.ico',
-			'url' : 'http://en.wikipedia.org/wiki/How%s'
+			'url' : 'http://en.wikipedia.org/wiki/%s'
 		}, {
 			'id' : 1,
 			'name' : 'Google',
 			'favicon' : './favicon/google.ico',
-			'url' : 'http://www.google.com/search?hl=en&q=%s'
+			'url' : 'https://www.google.com/search?hl=en&q=%s'
 		}, {
 			'id' : 2,
 			'name' : 'Douban',
@@ -44,7 +44,7 @@ var _build_in_seach_engines = [{
 			'id' : 3,
 			'name' : 'Twitter',
 			'favicon' : './favicon/twitter.ico',
-			'url' : 'http://twitter.com/search?q=%s'
+			'url' : 'https://twitter.com/search?q=%s'
 		}, {
 			'id' : 4,
 			'name' : 'Bing',
@@ -59,7 +59,7 @@ var _build_in_seach_engines = [{
 			'id' : 6,
 			'name' : 'Shooter',
 			'favicon' : './favicon/shooter.ico',
-			'url' : 'http://shooter.cn/search/%s'
+			'url' : 'http://www.shooter.cn/search2/%s'
 		}, {
 			'id' : 7,
 			'name' : 'Amazon',
@@ -69,7 +69,7 @@ var _build_in_seach_engines = [{
 			'id' : 8,
 			'name' : 'Delicious',
 			'favicon' : './favicon/delicious.ico',
-			'url' : 'http://delicious.com/search?p=%s'
+			'url' : 'https://delicious.com/search/%s'
 		}, {
 			'id' : 9,
 			'name' : 'Flickr',
@@ -84,12 +84,12 @@ var _build_in_seach_engines = [{
 			'id' : 11,
 			'name' : 'Youtube',
 			'favicon' : './favicon/youtube.ico',
-			'url' : 'http://www.youtube.com/results?search_query=%s'
+			'url' : 'https://www.youtube.com/results?search_query=%s'
 		}, {
 			'id' : 12,
 			'name' : 'Ebay',
 			'favicon' : './favicon/ebay.ico',
-			'url' : 'http://shop.ebay.com/?_nkw=%s&_sacat=See-All-Categories'
+			'url' : 'http://www.ebay.com/sch/i.html?_nkw=%s'
 		}, {
 			'id' : 13,
 			'name' : 'IMDB',
@@ -109,12 +109,12 @@ var _build_in_seach_engines = [{
 			'id' : 16,
 			'name' : 'Yahoo',
 			'favicon' : './favicon/yahoo.ico',
-			'url' : 'http://search.yahoo.com/search?fr=crmas&p=%s'
+			'url' : 'https://search.yahoo.com/search?p=%s'
 		}, {
 			'id' : 17,
 			'name' : 'Pinterest',
 			'favicon' : './favicon/pinterest.ico',
-			'url' : 'http://pinterest.com/search/?q=%s'
+			'url' : 'http://www.pinterest.com/search/pins/?q=%s'
 		}, {
 			'id' : 18,
 			'name' : 'Zhihu',
