@@ -1,177 +1,117 @@
-var _start_x = 0;
-var _start_y = 0;
-var _seId = 0;
-var _dnd_data;
-
+var _yadng = {};
 var _url_regex_0 = /[a-zA-Z]+:\/\/[^\s]*/;
 var _url_regex_1 = /[^\s]*\.(com|net|org|gov|edu|biz|name|info|asia|uk|hk|cn|hk|au|ca|de|fr|jp|kr|tw|ru|us)/;
 var _url_regex_2 = /^javascript:/;
 
-var dragStart = function(e) {
-	_start_x = window.event.x;
-	_start_y = window.event.y;
-	_dnd_data = getDragSelection(e).data;
+var _dragstart = function(e) {
+	_yadng.isSearch = false;
+	_yadng.startX = e.x;
+	_yadng.startY = e.y;
+	var el = e.srcElement;
+	if (el.nodeName == 'A') {
+		var h = el.href;
+		if (!h.match(_url_regex_2)) {// NOT href="javascript:
+			_yadng.selection = h;
+		}
+	} else if (el.nodeName == 'IMG') {
+		_yadng.selection = el.src;
+	} else {
+		var t = window.getSelection().toString();
+		var m = t.match(_url_regex_0);
+		if (m) {// text with url link
+			_yadng.selection = m[0];
+		} else {
+			m = t.match(_url_regex_1);
+			if (m) {// text with url link
+				_yadng.selection = m[0];
+			} else {// text for search
+				_yadng.isSearch = true;
+				_yadng.selection = t;
+			}
+		}
+	}
 	return false;
 };
 
-var dragOver = function(e) {
+var _dragover = function(e) {
 	if (e.preventDefault) {
 		e.preventDefault();
 	}
-	e.dataTransfer.effectAllowed = 'copy';
-	e.dataTransfer.dropEffect = 'copy';
 	return false;
 };
 
-var doDrag = function(e) {
-	var _new_seId = _getSeId();
-	if (_seId != _new_seId && (window.event.x !== 0 && window.event.y !== 0)) {
-		_seId = _new_seId;
+var _drop = function(e) {
+	if (e.stopPropagation) {
+		e.stopPropagation();
 	}
+	if (_yadng.selection) {
+		_yadng.endX = e.x;
+		_yadng.endY = e.y;
+		chrome.runtime.connect().postMessage(_yadng);
+	}
+	return false;
 };
 
-var doDrop = function(e) {
-	if (e.dataTransfer.dropEffect == 'none') {
-		// temp set to 'none' for win bug
-		// win set the 'copy'(@line 18) to 'move'
-		if (e.preventDefault) {
-			e.preventDefault();
-		}
-		if (_dnd_data) {
-			var _tab = _getTab(_dnd_data);
-			chrome.runtime.connect().postMessage(_tab);
-			return false;
-		}
-	}
+var _doYadng = function(_yadng) {
+	chrome.tabs.getSelected(null, function(tab) {
+				if (_yadng.isSearch) {
+					_doSearch(_yadng, tab);
+				} else {
+					_doLink(_yadng, tab);
+				}
+			});
 };
 
-// thanks to wenzhang.zhu@http://code.google.com/u/wenzhang.zhu/
-var getDragSelection = function(e) {
-	var data;
-	var data_type = 'text';
-	var selection = window.getSelection();
-	var parent_node = e.srcElement;
-	while (parent_node && parent_node.nodeName != 'A') {
-		parent_node = parent_node.parentNode;
-	}
-	if (parent_node) {
-		if (!parent_node.href.match(_url_regex_2)) {
-			data_type = 'link';
-			data = parent_node.href;
-		}
-	} else if (e.srcElement.nodeName == 'IMG') {
-		data_type = 'img';
-		data = e.srcElement.src;
-	} else {
-		data = e.dataTransfer.getData('Text');
-		if (!data) {
-			data = selection.toString();
-		}
-	}
-	return {
-		'type' : data_type,
-		'data' : data
-	};
+var _doSearch = function(_yadng, tab) {
+	chrome.storage.sync.get(['searchEngines'], function(r) {
+				var se = 0;
+				if (_yadng.endX > _yadng.startX) {
+					se = _yadng.endY > _yadng.startY ? 3 : 1;
+				} else {
+					se = _yadng.endY > _yadng.startY ? 2 : 0;
+				}
+				var url;
+				if (-1 == r.searchEngines[se].id) { // user search engines
+					url = r.searchEngines[se].url.replace('%s',
+							_yadng.selection);
+				} else { // build-in
+					url = _build_in_seach_engines[r.searchEngines[se].id].url
+							.replace('%s', _yadng.selection);
+				}
+				chrome.tabs.create({
+							'url' : url,
+							'active' : false,
+							'index' : tab.index + 1
+						});
+			});
 };
 
-var doYadng = function(_tab) {
-	if (_tab.message == 'tab') {
-		chrome.tabs.getSelected(null, function(tab) {
-					chrome.storage.sync.get(['indexMode', 'selectedMode',
-									'searchEngines'], function(r) {
-								_set_index(_tab, tab.index, r.indexMode);
-								_set_selected(_tab, r.selectedMode);
-								if (!_tab.isUrl) {
-									_set_search_url(_tab, r.searchEngines);
-								}
-								chrome.tabs.create({
-											'url' : _tab.url,
-											'selected' : _tab.selected,
-											'index' : _tab.index
-										});
-							});
-				});
-	}
-};
-
-var _set_index = function(_tab, _i, _im) {
-	if (_im == 2) {
-		_tab.index = (_tab.seId === 0 || _tab.seId == 2) ? _i : _i + 1;
-		if (!_tab.isUrl) {
-			_tab.index = _i + 1;
-		}
-	} else {
-		_tab.index = _im === 0 ? _i + 1 : _i;
-	}
-};
-
-var _getTab = function(_dnd_data) {
-	var _tab = {
-		message : 'tab',
-		seId : _seId
-	};
-	_set_url(_tab, _dnd_data);
-	return _tab;
-};
-
-var _set_url = function(_tab, _dnd_data) {
-	var matches = _dnd_data.match(_url_regex_0);
-	if (matches) {
-		_tab.url = matches[0];
-		_tab.isUrl = true;
-	} else {
-		matches = _dnd_data.match(_url_regex_1);
-		if (matches) {
-			_tab.url = 'http://' + matches[0];
-			_tab.isUrl = true;
-		} else {
-			_tab.url = _dnd_data;
-			_tab.isUrl = false;
-		}
-	}
-};
-
-var _set_search_url = function(_tab, engines) {
-	if (-1 == engines[_tab.seId].id) { // user search engines
-		_tab.url = engines[_tab.seId].url.replace('%s', _tab.url);
-	} else { // build-in
-		_tab.url = _build_in_seach_engines[engines[_tab.seId].id].url.replace(
-				'%s', _tab.url);
-	}
-};
-
-var _set_selected = function(_tab, _sm) {
-	if (_sm == 2) {
-		_tab.selected = (_tab.seId === 0 || _tab.seId == 1) ? true : false;
-		if (!_tab.isUrl) {
-			_tab.selected = false;
-		}
-	} else {
-		_tab.selected = _sm === 0 ? true : false;
-	}
-};
-
-var _getSeId = function() {
-	var now_x = window.event.x;
-	var now_y = window.event.y;
-	if (now_x < _start_x) {
-		if (now_y > _start_y) {
-			return 2;
-		}
-		return 0;
-	} else {
-		if (now_y < _start_y) {
-			return 1;
-		}
-		return 3;
-	}
+var _doLink = function(_yadng, tab) {
+	chrome.storage.sync.get(['indexMode', 'selectedMode'], function(r) {
+				var ti = tab.index;
+				var index;
+				if (r.indexMode == 2) {
+					index = _yadng.endY > _yadng.startY ? ti + 1 : ti;
+				} else {
+					index = r.indexMode === 0 ? ti + 1 : ti;
+				}
+				var selected;
+				if (r.selectedMode == 2) {
+					selected = _yadng.endX > _yadng.startX ? true : false;
+				} else {
+					selected = r.selectedMode === 0 ? true : false;
+				}
+				chrome.tabs.create({
+							'url' : _yadng.selection,
+							'active' : selected,
+							'index' : index
+						});
+			});
 };
 
 chrome.runtime.onConnect.addListener(function(port) {
-			port.onMessage.addListener(doYadng);
+			port.onMessage.addListener(_doYadng);
 		});
-document.addEventListener('dragstart', dragStart, false);
-document.addEventListener('drag', doDrag, false);
-document.addEventListener('dragover', dragOver, false);
-document.addEventListener('dragend', doDrop, false);
-document.addEventListener('drop', doDrop, false);
+document.addEventListener('dragstart', _dragstart, false);
+document.addEventListener('dragover', _dragover, false);
+document.addEventListener('drop', _drop, false);
