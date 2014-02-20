@@ -89,15 +89,15 @@ var _doSearch = function(_yadng, tab) {
 var _doLink = function(_yadng, tab) {
 	chrome.storage.sync.get(['indexMode', 'selectedMode'], function(r) {
 				var ti = tab.index;
-				var index;
+				var index = ti + 1;
 				if (r.indexMode == 2) {
-					index = _yadng.endY > _yadng.startY ? ti + 1 : ti;
+					index = _yadng.endX > _yadng.startX ? ti + 1 : ti;
 				} else {
 					index = r.indexMode === 0 ? ti + 1 : ti;
 				}
-				var selected;
+				var selected = false;
 				if (r.selectedMode == 2) {
-					selected = _yadng.endX > _yadng.startX ? true : false;
+					selected = _yadng.endY > _yadng.startY ? false : true;
 				} else {
 					selected = r.selectedMode === 0 ? true : false;
 				}
