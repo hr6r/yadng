@@ -115,7 +115,6 @@ var _getTab = function(_dnd_data) {
 };
 
 var _set_url = function(_tab, _dnd_data) {
-
 	var matches = _dnd_data.match(_url_regex_0);
 	if (matches) {
 		_tab.url = matches[0];

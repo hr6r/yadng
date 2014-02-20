@@ -19,7 +19,6 @@ var _show_search_yadng_zone = function(_i, _img) {
 	if (_zone) {
 		_zone.css('background-image', 'url("' + _img + '")');
 	}
-
 	var _input = $('#search_engine_url_' + _i);
 	if (_input) {
 		_input.css('background-image', 'url("' + _img + '")');
@@ -191,6 +190,7 @@ var _convert_search_engines = function() {
 	chrome.storage.sync.set({
 				'searchEngines' : searchEngines
 			});
+	return searchEngines;
 };
 
 /**
