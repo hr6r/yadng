@@ -157,6 +157,42 @@ var _i18n_msgs = ['reset_btn', 'vote_header', 'feedback_a', 'url_header',
 		'search_engine_a_2', 'search_engine_a_3', 'feedback_h4',
 		'donate_header', 'paypal_a', 'alipay_a'];
 
+var _convert_selected_mode = function() {
+	var selectedMode = _getLocal().selectedMode;
+	chrome.storage.sync.set({
+				'selectedMode' : selectedMode
+			});
+	return selectedMode;
+};
+
+var _convert_index_mode = function() {
+	var indexMode = _getLocal().indexMode;
+	chrome.storage.sync.set({
+				'indexMode' : indexMode
+			});
+	return indexMode;
+};
+
+var _convert_search_engines = function() {
+	var searchEngines = [];
+	var _old = _getLocal().searchEngines;
+	for (var i = 0; i < _old.length; i++) {
+		if (isNaN(_old[i])) {// user SE
+			searchEngines[i] = {
+				id : -1,
+				url : _old[i].url
+			};
+		} else { // build-in SE
+			searchEngines[i] = {
+				id : _old[i]
+			};
+		}
+	}
+	chrome.storage.sync.set({
+				'searchEngines' : searchEngines
+			});
+};
+
 /**
  * @deprecated for old users
  */

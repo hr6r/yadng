@@ -24,27 +24,23 @@ var _init_i18n = function() {
 var _init_open_link_options = function() {
 
 	chrome.storage.sync.get('selectedMode', function(r) {
-				if (!'selectedMode' in r) {// for old user data
-					r.selectedMode = _getLocal().selectedMode;
-					chrome.storage.sync.set({
-								'selectedMode' : r.selectedMode
-							});
+
+				if (!('selectedMode' in r)) {// for old user data
+					r.selectedMode = _convert_selected_mode();
 				}
+
 				$('#selected_mode_' + r.selectedMode).prop('checked', true);
 			});
 
 	chrome.storage.sync.get('indexMode', function(r) {
-				if (!'indexMode' in r) {// for old user data
-					r.indexMode = _getLocal().indexMode;
-					chrome.storage.sync.set({
-								'indexMode' : r.indexMode
-							});
+				if (!('indexMode' in r)) {// for old user data
+					r.indexMode = _convert_index_mode();
 				}
 				$('#index_mode_' + r.indexMode).prop('checked', true);
 			});
 };
 
-function _init_selects(_id) {
+var _init_selects = function(_id) {
 
 	var _select = $('#search_engine_select_' + _id);
 
@@ -63,24 +59,8 @@ var _init_search_options = function() {
 
 	chrome.storage.sync.get('searchEngines', function(r) {
 
-				if (!'searchEngines' in r) { // for old user data
-					r.searchEngines = [];
-					var _old = _getLocal().searchEngines;
-					for (var i = 0; i < _old.length; i++) {
-						if (isNaN(_old[i])) {// user SE
-							r.searchEngines[i] = {
-								id : -1,
-								url : _old[i].url
-							};
-						} else { // build-in SE
-							r.searchEngines[i] = {
-								id : _old[i]
-							};
-						}
-					}
-					chrome.storage.sync.set({
-								'searchEngines' : r.searchEngines
-							});
+				if (!('searchEngines' in r)) { // for old user data
+					r.searchEngines = _convert_search_engines();
 				}
 
 				var engines = r.searchEngines;
@@ -175,7 +155,7 @@ var add_search_engine = function(e) {
 		return false;
 	}
 
-	var url_regex_0 = /[a-zA-z]+:\/\/[^\s]*/
+	var url_regex_0 = /[a-zA-z]+:\/\/[^\s]*/;
 	if (!url.match(url_regex_0)) {
 		alert(chrome.i18n.getMessage('se_not_url_alert'));
 		return false;

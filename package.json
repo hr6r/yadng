@@ -1,0 +1,17 @@
+{
+	"name" : "yadng",
+	"version" : "0.3.0",
+	"repository" : {
+		"type" : "git",
+		"url" : "git://github.com/hr6r/yadng.git"
+	},
+	"author" : "hr6r",
+	"bugs" : {
+		"url" : "https://github.com/hr6r/yadng/issues"
+	},
+	"homepage" : "https://github.com/hr6r/yadng",
+	"devDependencies" : {
+		"grunt" : "~0.4.2",
+		"grunt-contrib-jshint" : "~0.8.0"
+	}
+}
