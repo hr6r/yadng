@@ -9,12 +9,21 @@ var _dragstart = function(e) {
 	_yadng.startY = e.y;
 	var el = e.srcElement;
 	if (el.nodeName == 'A') {
-		var h = el.href;
-		if (!h.match(_url_regex_2)) {// NOT href="javascript:
-			_yadng.selection = h;
+		if (!el.href.match(_url_regex_2)) {// NOT href="javascript:
+			_yadng.selection = el.href;
 		}
 	} else if (el.nodeName == 'IMG') {
-		_yadng.selection = el.src;
+		_yadng.selection = el.src;// img src
+		var pn = el.parentNode; // if <a><img/></a>
+		do {
+			if (pn.nodeName == 'A') {
+				if (!pn.href.match(_url_regex_2)) {// NOT href="javascript:
+					_yadng.selection = pn.href;
+				}
+				break;
+			}
+			pn = pn.parentNode;
+		} while (pn);
 	} else {
 		var t = window.getSelection().toString();
 		var m = t.match(_url_regex_0);

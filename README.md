@@ -6,6 +6,11 @@ Drag URL to open at Back/Front, Before/After; Drag text to 4 directions to searc
 [Install Via Google Web Store](https://chrome.google.com/webstore/detail/hnoonkgmmnklbdehoepdjcidhjbncjmi/)
 
 ## Changelog ##
+**v0.3.2**
+
+1. fix open img link issue
+
+
 **v0.3.1**
 
 1. fix Always After, Always Front-End issue
