@@ -2,7 +2,7 @@
 	"manifest_version" : 2,
 	"name" : "Yet Another Drag and Go",
 	"short_name" : "yadng",
-	"version" : "0.3.2",
+	"version" : "0.3.3",
 	"default_locale" : "en",
 	"description" : "__MSG_desc__",
 	"icons" : {

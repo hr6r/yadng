@@ -1,6 +1,6 @@
 var _yadng = {};
 var _url_regex_0 = /[a-zA-Z]+:\/\/[^\s]*/;
-var _url_regex_1 = /[^\s]*\.(com|net|org|gov|edu|biz|name|info|asia|uk|hk|cn|hk|au|ca|de|fr|jp|kr|tw|ru|us)/;
+var _url_regex_1 = /[^\s]*\.(com|net|org|gov|edu|info|uk|hk|cn|au|ca|de|fr|jp|kr|tw|ru|us)[^\s]*/;
 var _url_regex_2 = /^javascript:/;
 
 var _dragstart = function(e) {
@@ -32,7 +32,7 @@ var _dragstart = function(e) {
 		} else {
 			m = t.match(_url_regex_1);
 			if (m) {// text with url link
-				_yadng.selection = m[0];
+				_yadng.selection = 'http://' + m[0];
 			} else {// text for search
 				_yadng.isSearch = true;
 				_yadng.selection = t;
