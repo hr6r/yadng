@@ -35,7 +35,7 @@ var _dragstart = function(e) {
 				_yadng.selection = 'http://' + m[0];
 			} else {// text for search
 				_yadng.isSearch = true;
-				_yadng.selection = t;
+				_yadng.selection = encodeURIComponent(t);
 			}
 		}
 	}
